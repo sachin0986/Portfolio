@@ -5,12 +5,11 @@ import { FaSquareUpwork } from "react-icons/fa6";
 import { SiBento } from "react-icons/si";
 
 const Footer = () => {
-  const Link = "/v1739801151/bg_m7sod6.avif";
   return (
-    <footer className="bg-black text-white py-8 px-8">
+    <footer className="bg-black text-white py-2 px-8">
       {/* Freelance Section with Background Image */}
       <div
-        className="relative text-center p-15 mb-8"
+        className="relative text-center p-10 mb-8"
         style={{
           backgroundImage: `url("https://res.cloudinary.com/dm2ek1ift/image/upload/v1739801151/bg_m7sod6.avif")`, // ✅ External image URL
           backgroundSize: "cover",

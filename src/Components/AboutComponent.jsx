@@ -2,6 +2,7 @@ import React from "react";
 import { ContactMe } from "../Components/Buttons";
 import { MainCarousel } from "./Corousal";
 import { CLOUDINARY } from "../Utils/Database";
+import ContactMePage from "../Pages/ContactMePage";
 const AboutComponent = () => {
   return (
     <div className="bg-black p-6 text-center">
@@ -15,8 +16,8 @@ const AboutComponent = () => {
             </h3>
         </div>
         <div className="p-6 flex justify-center">
-          <ContactMe />
-</div>
+           <ContactMe onClick={<ContactMePage />}/>
+          </div>
         <div className="flex justify-center items-center p-4 mt-6">
           <img
           src={CLOUDINARY + `/v1739824467/Screenshot_2024-10-22_at_4.18.54_PM_flpxvn.png`}

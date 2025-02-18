@@ -84,7 +84,7 @@ const FilterSection = () => {
 
                   {/* Buttons Row */}
                   <div className="flex justify-between items-center w-full mt-4 space-x-4">
-                    <button className={`${style.buttons} flex-1`}>More Info</button>
+                    <button className={`${style.buttons} flex-1`}><span className="text-black">More Info</span></button>
 
                     {/* GitHub Link */}
                     <a href={item.gitLinl} target="_blank" rel="noopener noreferrer" className={style.iconButton}>

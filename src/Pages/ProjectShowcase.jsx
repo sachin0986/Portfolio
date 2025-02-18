@@ -36,7 +36,6 @@ const ProjectShowcase = () => {
 
   return (
     <div className="bg-black min-h-screen text-white p-6">
-      {/* Filter Buttons */}
       <div className="flex justify-evenly space-x-4 mb-6 mt-4">
         {["All", "Deployments"].map((filter) => (
           <button
@@ -53,7 +52,6 @@ const ProjectShowcase = () => {
         ))}
       </div>
 
-      {/* Repository Grid */}
       <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-8 pt-8">
         {loading
           ? Array.from({ length: 6 }).map((_, index) => (

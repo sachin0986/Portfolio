@@ -95,7 +95,6 @@ export const MainCarousel = () => {
   );
 };
 
-
 export const AboutCarousel = () => {
   const [loading, setLoading] = useState(true);
 
@@ -112,48 +111,78 @@ export const AboutCarousel = () => {
     },
     infinite: true,
     speed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
     centerMode: true,
-    centerPadding: "10px",
     dots: false,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "10px",
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerPadding: "5px",
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px",
+          centerMode: false,
+        }
+      }
+    ]
   };
 
   return (
-    <div className="lg:w-2/4 text-gray-200">
-      <div>
-        <Slider {...sliderSettings}>
-          {imageList.map((image, index) => (
-            <div key={index} className="px-4">
-              {loading ? (
-                <div className="animate-pulse w-full h-[220px] bg-gray-700 rounded-2xl"></div>
-              ) : (
-                <img 
-                  src={CLOUDINARY + image} 
-                  alt={`VIT ${index}`} 
-                  className="rounded-2xl shadow-lg w-full h-[220px] object-cover border border-gray-600" 
-                />
-              )}
-            </div>
-          ))}
-        </Slider>
-        <div className="space-y-6 text-center lg:text-left max-w-4xl mx-auto">
-          <h3 className="text-xl text-center text-white m-4 font-semibold">
-            When I stepped into VIT Bhopal, I thought my days would be filled with just coding, debugging, and caffeine-fueled all-nighters—but turns out, <strong className="text-yellow-400">life at VIT wasn’t just about coding and research!</strong>
+    <div className="w-full lg:w-2/4 px-4 lg:px-0">
+      <div className="max-w-[1200px] mx-auto">
+        {/* Slider Section */}
+        <div className="mb-8">
+          <Slider {...sliderSettings}>
+            {imageList.map((image, index) => (
+              <div key={index} className="px-2 sm:px-4">
+                {loading ? (
+                  <div className="animate-pulse w-full h-[180px] sm:h-[220px] bg-gray-700 rounded-2xl"></div>
+                ) : (
+                  <img 
+                    src={CLOUDINARY + image} 
+                    alt={`VIT ${index}`} 
+                    className="rounded-2xl shadow-lg w-full h-[180px] sm:h-[220px] object-cover border border-gray-600" 
+                  />
+                )}
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* Text Content Section */}
+        <div className="space-y-6 px-4 sm:px-6 lg:px-8">
+          <h3 className="text-lg sm:text-xl text-center text-white font-semibold">
+            When I stepped into VIT Bhopal, I thought my days would be filled with just coding, debugging, and caffeine-fueled all-nighters—but turns out, 
+            <strong className="text-yellow-400"> life at VIT wasn't just about coding and research!</strong>
           </h3>
-          <div className="space-y-4 m-4">
-            <p className="text-sm text-gray-300">
-              🎭 <strong className="text-yellow-400">Cultural Fests?</strong> Absolute Madness! From dancing like nobody’s watching at Vibrance 💃🕺 to being awestruck by insane musical performances, the fests here are next level. Whether you’re a performer, a spectator, or just here for the food stalls (guilty! 🙈), there’s something for everyone.
+          
+          <div className="space-y-4">
+            <p className="text-xs sm:text-sm text-gray-300">
+              🎭 <strong className="text-yellow-400">Cultural Fests?</strong> Absolute Madness! From dancing like nobody's watching at Vibrance 💃🕺 to being awestruck by insane musical performances, the fests here are next level. Whether you're a performer, a spectator, or just here for the food stalls (guilty! 🙈), there's something for everyone.
             </p>
-            <p className="text-sm text-gray-300">
-              🌿 <strong className="text-green-400">Green Campus & Sustainability Goals</strong> VIT isn’t just about tech—it’s also about nature and sustainability. With lush greenery, environmental awareness campaigns, and initiatives like planting drives, it’s inspiring to be part of a place that cares about the planet as much as it does about innovation. Plus, nothing beats coding under the trees with a fresh breeze and a cup of chai! 🍃☕
+            
+            <p className="text-xs sm:text-sm text-gray-300">
+              🌿 <strong className="text-green-400">Green Campus & Sustainability Goals</strong> VIT isn't just about tech—it's also about nature and sustainability. With lush greenery, environmental awareness campaigns, and initiatives like planting drives, it's inspiring to be part of a place that cares about the planet as much as it does about innovation. Plus, nothing beats coding under the trees with a fresh breeze and a cup of chai! 🍃☕
             </p>
-            <p className="text-sm text-gray-300">
-              🔥 <strong className="text-red-400">Final Words for Future VITians</strong> If you’re planning to join VIT Bhopal, be ready for an adventure—from late-night hackathons to crazy fest nights, from debugging errors to brainstorming world-changing ideas. It’s a place where you don’t just study; you experience, explore, and evolve.
+            
+            <p className="text-xs sm:text-sm text-gray-300">
+              🔥 <strong className="text-red-400">Final Words for Future VITians</strong> If you're planning to join VIT Bhopal, be ready for an adventure—from late-night hackathons to crazy fest nights, from debugging errors to brainstorming world-changing ideas. It's a place where you don't just study; you experience, explore, and evolve.
             </p>
           </div>
         </div>
@@ -161,7 +190,6 @@ export const AboutCarousel = () => {
     </div>
   );
 };
-
 
 
 
