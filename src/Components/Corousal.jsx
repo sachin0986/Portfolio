@@ -1,0 +1,240 @@
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { CLOUDINARY, imageList } from "../Utils/Database";
+import { FaReact, FaNodeJs, FaBootstrap, FaHtml5 } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiExpress, SiPostman, SiBento } from "react-icons/si";
+import { FaGithub } from "react-icons/fa6";
+import { FaJava } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaSquareUpwork } from "react-icons/fa6";
+import { VscVscode } from "react-icons/vsc";
+import { VscCode } from "react-icons/vsc";
+import { SiVite } from "react-icons/si";
+import { RiVercelLine } from "react-icons/ri";
+import { SiNetlify } from "react-icons/si";
+import { peopleMatterSections } from "../Utils/Database";
+
+
+
+const icons = [
+  { title: "React.js", icon: <FaReact className="text-blue-400 text-5xl" /> },
+    { title: "Node.js", icon: <FaNodeJs className="text-green-500 text-5xl" /> },
+    { title: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400 text-5xl" /> },
+    { title: "Bootstrap", icon: <FaBootstrap className="text-purple-400 text-5xl" /> },
+    { title: "HTML / CSS", icon: <FaHtml5 className="text-orange-500 text-5xl" /> },
+    { title: "Git", icon: <FaGithub className="text-red-500 text-5xl" /> },
+    { title: "Express.js", icon: <SiExpress className="text-gray-400 text-5xl" /> },
+    { title: "MongoDB", icon: <SiMongodb className="text-green-400 text-5xl" /> },
+    { title: "API & Postman", icon: <SiPostman className="text-orange-400 text-5xl" /> },
+    { title: "Bento", icon: <SiBento className="text-gray-300 text-5xl" /> },
+    { title: "Java", icon: <FaJava className="text-red-500 text-5xl" /> },
+    { title: "JavaScript", icon: <IoLogoJavascript className="text-yellow-500 text-5xl" /> },
+    { title: "UP Work", icon: <FaSquareUpwork className="text-green-600 text-5xl" /> },
+    { title: "VS Code", icon: <VscVscode className="text-blue-400 text-5xl" /> },
+    { title: "GSSoC", icon: <VscCode className="text-orange-500 text-5xl" /> },
+    { title: "Vite", icon: <SiVite className="text-purple-500 text-5xl" /> },
+    { title: "Vite", icon: <RiVercelLine className="text-white text-5xl" /> },
+    { title: "Vite", icon: <SiNetlify className="text-cyan-300 text-5xl" /> },
+  ];
+
+export const FooterCarousel = () => {
+  return (
+    <div className="w-full bg-black overflow-hidden">
+      <div className="relative w-full h-[100px]">
+        {/* Blurry gradient effect on sides */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-[200px] h-full bg-gradient-to-r from-black to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 w-[200px] h-full bg-gradient-to-l from-black to-transparent z-10"></div>
+        </div>
+
+        <motion.div
+          className="flex space-x-12 w-max"
+          animate={{ x: ["0%", "-50%"] }} // Moves left infinitely
+          transition={{ repeat: Infinity, duration: 40, ease: "linear" }} // Smooth continuous effect
+        >
+          {[...icons, ...icons].map((item, index) => (
+            <div key={index} className="flex items-center justify-center w-[220px] h-[100px]">
+              {item.icon}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+
+export const MainCarousel = () => {
+  const [dragging, setDragging] = useState(false);
+
+  return (
+    <div className="bg-black flex items-center justify-center min-h-screen overflow-hidden">
+      <motion.div
+        className="carousel h-auto perspective-[600px] -translate-y-[100px] flex space-x-6"
+        drag="x"
+        dragConstraints={{ left: -1500, right: 150 }}
+        onDragStart={() => setDragging(true)}
+        onDragEnd={() => setDragging(false)}
+      >
+        {images.map((src, index) => (
+          <motion.div
+            key={index}
+            className="carousel-item w-[400px] cursor-grab active:cursor-grabbing"
+          >
+            <img src={src} alt={`Slide ${index + 1}`} className="w-full rounded-lg shadow-lg" />
+            <h3 className="bg-white text-black text-2xl font-bold mt-[-5px] px-[10px] py-[5px] text-center">
+              Someone Famous {index + 1}
+            </h3>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+
+export const AboutCarousel = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const sliderSettings = {
+    transition: {
+      repeat: Infinity,
+      duration: 40,
+      ease: "linear"
+    },
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    centerMode: true,
+    centerPadding: "10px",
+    dots: false,
+    arrows: false,
+  };
+
+  return (
+    <div className="lg:w-2/4 text-gray-200">
+      <div>
+        <Slider {...sliderSettings}>
+          {imageList.map((image, index) => (
+            <div key={index} className="px-4">
+              {loading ? (
+                <div className="animate-pulse w-full h-[220px] bg-gray-700 rounded-2xl"></div>
+              ) : (
+                <img 
+                  src={CLOUDINARY + image} 
+                  alt={`VIT ${index}`} 
+                  className="rounded-2xl shadow-lg w-full h-[220px] object-cover border border-gray-600" 
+                />
+              )}
+            </div>
+          ))}
+        </Slider>
+        <div className="space-y-6 text-center lg:text-left max-w-4xl mx-auto">
+          <h3 className="text-xl text-center text-white m-4 font-semibold">
+            When I stepped into VIT Bhopal, I thought my days would be filled with just coding, debugging, and caffeine-fueled all-nighters—but turns out, <strong className="text-yellow-400">life at VIT wasn’t just about coding and research!</strong>
+          </h3>
+          <div className="space-y-4 m-4">
+            <p className="text-sm text-gray-300">
+              🎭 <strong className="text-yellow-400">Cultural Fests?</strong> Absolute Madness! From dancing like nobody’s watching at Vibrance 💃🕺 to being awestruck by insane musical performances, the fests here are next level. Whether you’re a performer, a spectator, or just here for the food stalls (guilty! 🙈), there’s something for everyone.
+            </p>
+            <p className="text-sm text-gray-300">
+              🌿 <strong className="text-green-400">Green Campus & Sustainability Goals</strong> VIT isn’t just about tech—it’s also about nature and sustainability. With lush greenery, environmental awareness campaigns, and initiatives like planting drives, it’s inspiring to be part of a place that cares about the planet as much as it does about innovation. Plus, nothing beats coding under the trees with a fresh breeze and a cup of chai! 🍃☕
+            </p>
+            <p className="text-sm text-gray-300">
+              🔥 <strong className="text-red-400">Final Words for Future VITians</strong> If you’re planning to join VIT Bhopal, be ready for an adventure—from late-night hackathons to crazy fest nights, from debugging errors to brainstorming world-changing ideas. It’s a place where you don’t just study; you experience, explore, and evolve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+export const AllPicturesCarousel = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const sliderSettings = {
+    infinite: true,
+    speed: 1200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2800,
+    fade: true,
+    cssEase: "ease-in-out",
+    arrows: false,
+    dots: true,
+  };
+
+  return (
+    <div
+      className={`bg-black p-4 rounded-3xl transition-opacity duration-700 ${
+        loading ? "animate-pulse bg-gray-800" : "opacity-100"
+      }`}
+    >
+      {loading ? (
+        <div className="h-[400px] w-full bg-gray-700 rounded-2xl"></div>
+      ) : (
+        <Slider {...sliderSettings}>
+          {peopleMatterSections.map((section, index) => (
+            <div key={index} className="px-4">
+              <div className="mb-8 flex flex-col items-center text-center p-6">
+                <h2 className="text-4xl font-bold text-[#f8ae1a] mb-4">{section.title}</h2>
+                <p className="text-white text-lg max-w-2xl">{section.description}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Large feature image */}
+                <div className="lg:col-span-2 h-[400px]">
+                  <img
+                    src={section.images[0].src}
+                    alt={section.images[0].alt}
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  />
+                </div>
+
+                {/* Grid of smaller images */}
+                <div className="grid grid-cols-2 gap-4">
+                  {section.images.slice(1).map((image, imgIndex) => (
+                    <div key={imgIndex} className="h-[190px]">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover rounded-xl shadow-xl"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      )}
+    </div>
+  );
+};
+
+
+
+
+
