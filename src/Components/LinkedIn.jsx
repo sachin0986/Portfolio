@@ -58,6 +58,7 @@ const LinkData = [
           </div>
           
           {/* Button */}
+          <a href={link} target="-blank">
           <button className={`w-full inline-flex items-center justify-between px-4 py-2 text-sm font-medium text-white ${bgColor} rounded-lg hover:opacity-90 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-colors`}>
             {buttonText || 'Connect'}
             <svg 
@@ -75,6 +76,7 @@ const LinkData = [
               />
             </svg>
           </button>
+          </a>
         </div>
       </div>
     );

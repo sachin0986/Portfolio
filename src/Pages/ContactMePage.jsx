@@ -101,7 +101,7 @@ const  ContactMePage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full bg-[#2A2A2A] text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BFFF00]/50"
-                    placeholder="Jane Smith"
+                    placeholder="Full Name"
                     required
                   />
                 </div>
@@ -114,7 +114,7 @@ const  ContactMePage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full bg-[#2A2A2A] text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BFFF00]/50"
-                    placeholder="jane@example.com"
+                    placeholder="email@example.com"
                     required
                   />
                 </div>
