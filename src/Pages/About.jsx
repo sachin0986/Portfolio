@@ -36,7 +36,7 @@ const About = () => {
       <div className="space-y-8">
         <div className="flex justify-center gap-4 align-middle">
           <GiGraduateCap size={60} className="text-gray-400"/>
-          <h2 className="bg-gradient-to-r from-[#5A0FC8] to-[#FF0080] text-5xl font-bold text-center bg-clip-text text-transparent">My Journey at VIT Bhopal – More Than Just Code!</h2>
+          <h2 className="text-blue-400 text-5xl font-bold text-center bg-clip-text">My Journey at VIT Bhopal – More Than Just Code!</h2>
         </div>
         <div className="flex flex-col lg:flex-row gap-6 px-10 py-20 pb-8 items-center"> 
               <AboutVideo />

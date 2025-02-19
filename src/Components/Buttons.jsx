@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const ButtonsStyle = {
+export const ButtonsStyle = {
 glocyButtons: `px-5 py-2 rounded-3xl shadow-lg text-white font-semibold transition-all duration-300 backdrop-blur-lg bg-white/10 border border-white/20 hover:bg-white/20`,
 }
 

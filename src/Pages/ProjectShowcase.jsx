@@ -18,6 +18,7 @@ const ProjectShowcase = () => {
         try {
           const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`);
           const data = await response.json();
+          console.log(data)
           setRepos(data);
         } catch (error) {
           console.error("Error fetching GitHub repos:", error);

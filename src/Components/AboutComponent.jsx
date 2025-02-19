@@ -1,8 +1,10 @@
 import React from "react";
 import { ContactMe } from "../Components/Buttons";
-import { MainCarousel } from "./Corousal";
 import { CLOUDINARY } from "../Utils/Database";
-import ContactMePage from "../Pages/ContactMePage";
+import Currently from "./Currently";
+import HowDesignPort from "./HowDesignPort";
+import Unknown from "./Unknown";
+
 const AboutComponent = () => {
   return (
     <div className="bg-black p-6 text-center">
@@ -16,29 +18,25 @@ const AboutComponent = () => {
             </h3>
         </div>
         <div className="p-6 flex justify-center">
-           <ContactMe onClick={<ContactMePage />}/>
+           <ContactMe />
           </div>
-        <div className="flex justify-center items-center p-4 mt-6">
+        {/* <div className="flex justify-center items-center p-4 mt-6">
           <img
           src={CLOUDINARY + `/v1739824467/Screenshot_2024-10-22_at_4.18.54_PM_flpxvn.png`}
           alt="logo"
           className="h-full w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
         />
-      </div>
+      </div> */}
+
+
+          <Currently />
+          <HowDesignPort />
+          <Unknown />
     </div>
   );
 };
 
 export default AboutComponent;
-
-
-
-
-//<span className="mt-4 text-gray-500 max-w-xl text-lg">
-          //<p>
-          //  I'm a student at Vellore Institute of Technology who loves to work on design and technology.
-        //  </p>
-       // </span>
 
 
 

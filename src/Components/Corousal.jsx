@@ -304,7 +304,7 @@ export const AllPicturesCarousel = () => {
           {peopleMatterSections.map((section, index) => (
             <div key={index} className="px-4">
               <div className="mb-8 flex flex-col items-center text-center p-6">
-                <h2 className="text-4xl font-bold text-[#f8ae1a] mb-4">{section.title}</h2>
+                <h2 className="text-4xl font-bold text-blue-400 mb-4">{section.title}</h2>
                 <p className="text-white text-lg max-w-2xl">{section.description}</p>
               </div>
 

@@ -10,6 +10,8 @@ import Resume from "./Pages/Resume";
 import Home from "./Pages/Home"; // Fixed import
 import Error from "./Pages/Error";
 import Publications from "./Pages/Publications";
+import CurrentlyCaseStudy from "./Pages/CurrentlyCaseStudy";
+import CaseStudyGSSoC from "./Pages/CaseStudyGSSoC";
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ export const appRouter = createBrowserRouter([
       { path: "/contact", element: <ContactMePage /> },
       { path: "/projectShowcase", element: <ProjectShowcase /> },
       { path: "/portfolioDoc", element: <PortfolioDoc /> },
+      { path: "/caseStudy/RepsandRecipies", element: <CurrentlyCaseStudy /> },
+      { path: "/caseStudy/GSSoC", element: <CaseStudyGSSoC /> },
       { path: "/resume", element: <Resume /> },
       { path: "/publications", element: <Publications /> }, // Changed path to match component name
     ],
