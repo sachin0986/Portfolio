@@ -103,7 +103,7 @@ export const AboutCarousel = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const sliderSettings = {
+  const imageSliderSettings = {
     transition: {
       repeat: Infinity,
       duration: 40,
@@ -143,12 +143,89 @@ export const AboutCarousel = () => {
     ]
   };
 
+  // New settings for text carousel
+  const textSliderSettings = {
+    infinite: true,
+    speed: 1000,           // Transition speed in milliseconds
+    autoplay: true,
+    autoplaySpeed: 5000,    // Wait time between slides (5 seconds)
+    cssEase: "ease-in-out", // Smoother transition between slides
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    pauseOnHover: true,     // Allow pausing on hover
+    vertical: false,
+    rtl: false,
+    fade: true             // Fade transition instead of sliding
+  };
+  // Text content for the carousel
+  const textContent = [
+    {
+      title: "When I stepped into VIT Bhopal, I thought my days would be filled with just coding, debugging, and caffeine-fueled all-nighters—but turns out, life at VIT wasn't just about coding and research!",
+      highlights: [
+        {
+          emoji: "🎭",
+          highlight: "Cultural Fests?",
+          color: "text-yellow-400",
+          text: "Absolute Madness! From dancing like nobody's watching at Vibrance 💃🕺 to being awestruck by insane musical performances, the fests here are next level. Whether you're a performer, a spectator, or just here for the food stalls (guilty! 🙈), there's something for everyone."
+        },
+        {
+          emoji: "🔥",
+          highlight: "Final Words for Future VITians",
+          color: "text-red-400",
+          text: "If you're planning to join VIT Bhopal, be ready for an adventure—from late-night hackathons to crazy fest nights, from debugging errors to brainstorming world-changing ideas. It's a place where you don't just study; you experience, explore, and evolve."
+        }
+      ]
+    },
+    {
+      title: "My journey at VIT Bhopal transformed me from a shy coder to a confident tech enthusiast ready to take on the world!",
+      highlights: [
+        {
+          emoji: "🏆",
+          highlight: "Hackathon Adventures",
+          color: "text-blue-400",
+          text: "From staying up for 36 hours straight to celebrating our first-ever hackathon win, these coding marathons taught me more about teamwork and creative problem-solving than any classroom ever could."
+        },
+        {
+          emoji: "🌟",
+          highlight: "Research Opportunities",
+          color: "text-purple-400",
+          text: "Working alongside professors on cutting-edge research projects opened my eyes to how technology can truly make a difference. Publishing my first paper was definitely a career-defining moment!"
+        },
+        {
+          emoji: "👨‍💻",
+          highlight: "Internship Experiences",
+          color: "text-orange-400",
+          text: "Thanks to VIT's industry connections, I landed internships that gave me real-world experience and a taste of what awaits after graduation. The skills I gained were invaluable for building my professional portfolio."
+        }
+      ]
+    },
+    {
+      title: "VIT Bhopal isn't just an engineering college – it's where friendships are forged and memories are made that last a lifetime!",
+      highlights: [
+        {
+          emoji: "🎮",
+          highlight: "Tech Clubs & Communities",
+          color: "text-pink-400",
+          text: "From the coding club to the robotics team, these student-led communities became my second family. Late-night debugging sessions turned into lifelong friendships and potential startup partnerships."
+        },
+        {
+          emoji: "🚀",
+          highlight: "Beyond Academics",
+          color: "text-indigo-400",
+          text: "VIT Bhopal prepared me not just with technical skills but with leadership abilities, communication expertise, and the confidence to innovate. The holistic development approach here truly sets graduates apart."
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="w-full lg:w-2/4 px-4 lg:px-0">
       <div className="max-w-[1200px] mx-auto">
-        {/* Slider Section */}
+        {/* Image Slider Section */}
         <div className="mb-8">
-          <Slider {...sliderSettings}>
+          <Slider {...imageSliderSettings}>
             {imageList.map((image, index) => (
               <div key={index} className="px-2 sm:px-4">
                 {loading ? (
@@ -165,26 +242,26 @@ export const AboutCarousel = () => {
           </Slider>
         </div>
 
-        {/* Text Content Section */}
-        <div className="space-y-6 px-4 sm:px-6 lg:px-8">
-          <h3 className="text-lg sm:text-xl text-center text-white font-semibold">
-            When I stepped into VIT Bhopal, I thought my days would be filled with just coding, debugging, and caffeine-fueled all-nighters—but turns out, 
-            <strong className="text-yellow-400"> life at VIT wasn't just about coding and research!</strong>
-          </h3>
-          
-          <div className="space-y-4">
-            <p className="text-xs sm:text-sm text-gray-300">
-              🎭 <strong className="text-yellow-400">Cultural Fests?</strong> Absolute Madness! From dancing like nobody's watching at Vibrance 💃🕺 to being awestruck by insane musical performances, the fests here are next level. Whether you're a performer, a spectator, or just here for the food stalls (guilty! 🙈), there's something for everyone.
-            </p>
-            
-            <p className="text-xs sm:text-sm text-gray-300">
-              🌿 <strong className="text-green-400">Green Campus & Sustainability Goals</strong> VIT isn't just about tech—it's also about nature and sustainability. With lush greenery, environmental awareness campaigns, and initiatives like planting drives, it's inspiring to be part of a place that cares about the planet as much as it does about innovation. Plus, nothing beats coding under the trees with a fresh breeze and a cup of chai! 🍃☕
-            </p>
-            
-            <p className="text-xs sm:text-sm text-gray-300">
-              🔥 <strong className="text-red-400">Final Words for Future VITians</strong> If you're planning to join VIT Bhopal, be ready for an adventure—from late-night hackathons to crazy fest nights, from debugging errors to brainstorming world-changing ideas. It's a place where you don't just study; you experience, explore, and evolve.
-            </p>
-          </div>
+        {/* Text Content Carousel */}
+        <div className="overflow-hidden">
+          <Slider {...textSliderSettings}>
+            {textContent.map((content, index) => (
+              <div key={index} className="space-y-6 px-4 sm:px-6 lg:px-8">
+                <h3 className="text-lg sm:text-xl text-center text-white font-semibold">
+                  {content.title.split("!")[0]}
+                  <strong className="text-yellow-400">{content.title.includes("!") ? "!" : ""}</strong>
+                </h3>
+                
+                <div className="space-y-4 text-center">
+                  {content.highlights.map((highlight, idx) => (
+                    <p key={idx} className="text-xs sm:text-sm text-gray-300">
+                      {highlight.emoji} <strong className={highlight.color}>{highlight.highlight}</strong> {highlight.text}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>
