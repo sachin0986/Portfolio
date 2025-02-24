@@ -35,6 +35,15 @@ const data = [
   }
 ];
 
+
+const connectionStyle = {
+  mainDiv: `w-60 p-6 bg-white border border-gray-200 rounded-3xl shadow`,
+  icon: `text-xl`,
+  name: `text-lg font-bold text-black`,
+  displayLink: `text-sm font-medium text-gray-800 hover:underline cursor-pointer`,
+}
+
+
 const getIconAndColor = (platformName) => {
   switch (platformName.toLowerCase()) {
     case 'twitter':
@@ -54,12 +63,12 @@ const ConnectionCard = ({ name, handle, displayLink, link, buttonText }) => {
   const { icon, bgColor } = getIconAndColor(name);
 
   return (
-    <div className="w-60 p-6 bg-white border border-gray-200 rounded-3xl shadow">
+    <div className={connectionStyle.mainDiv}>
       <div className="space-y-4">
         {/* Header */}
         <div className="flex items-center gap-2">
-          <span className="text-xl">{icon}</span>
-          <h5 className="text-lg font-bold text-black">{name}</h5>
+          <span className={connectionStyle.icon}>{icon}</span>
+          <h5 className={connectionStyle.name}>{name}</h5>
         </div>
         
         {/* Content */}
@@ -72,7 +81,7 @@ const ConnectionCard = ({ name, handle, displayLink, link, buttonText }) => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-800 hover:underline cursor-pointer"
+              className={connectionStyle.displayLink}
             >
               {displayLink}
             </a>
