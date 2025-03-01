@@ -42,8 +42,8 @@ const Header = () => {
           <ul className="flex flex-col md:flex-row md:space-x-2 lg:space-x-6 space-y-4 md:space-y-0">
             {[
               { name: "Home", path: "/" },
-              { name: "Projects", path: "/projectShowcase" },
-              { name: "Portfolio", path: "/portfolioDoc" },
+              { name: "Projects Showcase", path: "/projectShowcase" },
+              { name: "Portfolio Doc", path: "/portfolioDoc" },
               { name: "About", path: "/about" },
               { name: "Publications", path: "/publications" },
               { name: "Resume", path: "/resume" },
