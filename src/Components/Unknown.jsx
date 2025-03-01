@@ -21,7 +21,7 @@ const GSSoCContributor = () => {
         
             {/* Text and Button Section - On mobile, this will show first */}
             <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left order-1 md:order-2">
-                <h1 className="text-2xl md:text-3xl font-bold bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 text-transparent">
+                <h1 className="text-xl md:text-3xl font-bold bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 text-transparent">
                     GSSoC Contributor - Enhancing Open-Source Projects
                 </h1>
                 
