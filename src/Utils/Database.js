@@ -160,9 +160,9 @@ export const imageList = [
         "Whether it is family, friends, or business relationships, the people around me have always had a great impact on me. I love talking to others, knowing their stories, and getting inspired.",
       images: [
         { src: CLOUDINARY + "v1739801014/downtown_bpzmxt.jpg", alt: "Main Image 1" },
-        { src: CLOUDINARY + "v1739801016/sanjhal_t9n9oe.jpg", alt: "Image 2" },
-        { src: CLOUDINARY + "v1739801016/thw_walk_ufu8c4.jpg", alt: "Image 3" },
         { src: CLOUDINARY + "v1739801017/IMG_2959_zdqs37.jpg", alt: "Image 4" },
+        { src: CLOUDINARY + "v1739801016/thw_walk_ufu8c4.jpg", alt: "Image 3" },
+        { src: CLOUDINARY + "v1739801016/sanjhal_t9n9oe.jpg", alt: "Image 2" },
       ],
     },
     {

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { AllPicturesCarousel } from "../Components/Corousal";
 import { CLOUDINARY, imageList } from "../Utils/Database";
+import GameComponent from "../Components/GameComponent";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GiGraduateCap } from "react-icons/gi";
@@ -217,37 +218,35 @@ const About = () => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FF9900]">Life is just more than work</h1>
       </div>
 
-      {/* Super Goku Section */}
-      <div className="bg-[#F2D2BD] p-4 md:p-6 text-white">
-        {/* Upper Section - Responsive */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-between md:ml-8 md:mr-8 lg:ml-20 lg:mr-20 mt-4 md:mt-20">
-          {/* First Div */}
-          <div className="flex-1">
-            <h2 className="text-xl md:text-2xl lg:text-3xl pl-2 md:pl-4 text-[#A0522D]">I lift every day</h2>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#4A0404] mt-2 md:mt-4">And I go Super</h1>
-          </div>
-          
-          {/* Second Div */}
-          <div className="flex-1 mt-2 md:mt-0">
-            <p className="text-lg md:text-xl lg:text-2xl text-center text-[#A0522D]">
-              {isMobile || isTablet ? 
-                truncateText("Workouts are a part of my routine. They help me stay physically fit.", 50) : 
-                "Workouts are a part of my routine. They help me stay physically fit and also keep me sane while trying to develop great products."
-              }
-            </p>
-          </div>
-        </div>
-  
-        {/* Lower Section - Responsive Image */}
-        <div className="flex justify-center md:justify-end mt-4 md:mt-[-150px] lg:mt-[-300px]">
-          <img
-            src={CLOUDINARY + `v1739824465/goku_prev_ui_eca6nm.png`}
-            alt="GOKU IMAGE"
-            className="w-full max-w-[400px] md:max-w-[600px] lg:max-w-[1200px] h-auto object-contain"
-          />
-        </div>
-      </div>
+      {/* Super Goku Section - Updated with full description */}
+<div className="bg-[#F2D2BD] p-4 md:p-6 lg:p-8 text-white">
+  {/* Upper Section - Responsive */}
+  <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-between md:ml-8 md:mr-8 lg:ml-20 lg:mr-20 mt-4 md:mt-20">
+    {/* First Div */}
+    <div className="flex-1">
+      <h2 className="text-xl md:text-2xl lg:text-3xl pl-2 md:pl-4 text-[#A0522D]">I lift every day</h2>
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#4A0404] mt-2 md:mt-4">And I go Super</h1>
+    </div>
+    
+    {/* Second Div - Always showing full description */}
+    <div className="flex-1 mt-4 md:mt-0">
+      <p className="text-lg md:text-xl lg:text-2xl text-[#A0522D] md:text-center">
+        Workouts are a part of my routine. They help me stay physically fit and also keep me sane while trying to develop great products.
+      </p>
+    </div>
+  </div>
 
+  {/* Lower Section - Responsive Image with better positioning */}
+  <div className="flex flex-col items-center md:items-end mt-8 md:mt-0">
+    <div className="mt-[-60px] md:mt-[-150px] lg:mt-[-250px] w-full flex justify-center md:justify-end">
+      <img
+        src={CLOUDINARY + `v1739824465/goku_prev_ui_eca6nm.png`}
+        alt="GOKU IMAGE"
+        className="w-full max-w-[400px] md:max-w-[600px] lg:max-w-[1200px] h-auto object-contain"
+      />
+    </div>
+  </div>
+</div>
       {/* VIT Bhopal Journey Section */}
       <div className="space-y-4 md:space-y-8">
         <div className="flex justify-center gap-2 md:gap-4 align-middle px-4">
@@ -303,7 +302,7 @@ const About = () => {
                         <img 
                           src={CLOUDINARY + image} 
                           alt={`VIT ${index}`} 
-                          className="rounded-2xl shadow-lg w-full h-[120px] sm:h-[160px] md:h-[220px] object-cover border border-gray-600" 
+                          className="rounded-2xl shadow-lg w-full h-[220px] sm:h-[160px] md:h-[220px] object-cover border border-gray-600" 
                         />
                       )}
                     </div>
@@ -340,67 +339,11 @@ const About = () => {
         </div>
       </div>
 
-      {/* Gaming Section - Responsive */}
-      <div className="flex flex-col lg:flex-row bg-[#2B0902] w-full min-h-0 md:min-h-[60vh] lg:min-h-screen">
-        {/* Text Content - Full width on mobile/tablet */}
-        <div className="px-4 py-8 md:px-12 md:py-12 lg:pl-24 lg:pt-24 text-white w-full lg:w-1/2">
-          {/* First Section */}
-          <div className="mb-6 md:mb-8">
-            <h3 className="text-xl md:text-2xl text-gray-400">When I need a break</h3>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
-              I pull my controller to slay gods or kick goals
-            </h1>
-          </div>
-      
-          {/* God of War Section */}
-          <div className="flex items-center mb-6 md:mb-8 pt-4 md:pt-8">
-            <img
-              src={GOD_OF_WAR_LOGO}
-              alt="God of War"
-              className="w-16 h-16 md:w-24 md:h-24 lg:w-35 lg:h-35 object-cover rounded-lg mr-4 md:mr-6"
-            />
-            <div>
-              <h3 className="text-lg md:text-xl lg:text-2xl text-gray-400">All time favourite</h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-1 md:mt-2">God of War series</h1>
-            </div>
-          </div>
-      
-          {/* BGMI Section */}
-          <div className="flex items-center pt-2 md:pt-4">
-            <img
-              src={BGMI_LOGO}
-              alt="BGMI"
-              className="w-16 h-16 md:w-24 md:h-24 lg:w-35 lg:h-35 object-cover rounded-3xl mr-4 md:mr-6"
-            />
-            <div>
-              <h3 className="text-lg md:text-xl lg:text-2xl text-gray-400">Most hours spent</h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mt-1 md:mt-2">BGMI</h1>
-            </div>
-          </div>
-        </div>
-      
-        {/* Right Section - Image (hidden on mobile/tablet) */}
-        {!isMobile && !isTablet && (
-          <div className="w-1/2 flex items-center justify-end">
-            <img
-              src={CLOUDINARY + `/v1739822077/GOD_1_hzrdqg.png`}
-              alt="God of War Character"
-              className="object-fill w-[500px] h-[500px] lg:w-[600px] lg:h-[600px]"
-            />
-          </div>
-        )}
-        
-        {/* Main image for mobile/tablet only */}
-        {(isMobile || isTablet) && (
-          <div className="flex justify-center w-full px-4 py-6">
-            <img
-              src={CLOUDINARY + `/v1739822077/GOD_1_hzrdqg.png`}
-              alt="God of War Character"
-              className="object-contain max-h-[400px]"
-            />
-          </div>
-        )}
-      </div>
+
+{/* Gaming Section - Responsive */}
+<div>
+  <GameComponent />
+</div>
 
       {/* People Matter Section */}
       <div className="px-4 md:px-8 lg:px-10 pb-8">
