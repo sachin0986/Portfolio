@@ -21,7 +21,7 @@ export const EmailMe = () => {
 export const ContactMe = () => {
     return(
         <div>
-            <Link target="_blank" to="/contact">
+            <Link to="/contact">
             <button className={ButtonsStyle.glocyButtons}>
                 <span className="text-[#BFFF00]">Contact me</span>
             </button>

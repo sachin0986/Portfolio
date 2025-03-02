@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { VIDEO } from "../Utils/Constants";
-import { BGMI_LOGO, GOD_OF_WAR_LOGO } from "../Utils/Constants";
 import { peopleMatterSections } from "../Utils/Database";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
