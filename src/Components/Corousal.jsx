@@ -271,14 +271,14 @@ export const AboutCarousel = () => {
 
 
 export const AllPicturesCarousel = () => {
-  const [loading, setLoading] = useState(true);
+  const [loadingAll, setLoadingAll] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1200);
+    const timer = setTimeout(() => setLoadingAll(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
-  const sliderSettings = {
+  const sliderSettings1 = {
     infinite: true,
     speed: 1200,
     slidesToShow: 1,
@@ -294,13 +294,13 @@ export const AllPicturesCarousel = () => {
   return (
     <div
       className={`bg-black p-4 rounded-3xl transition-opacity duration-700 ${
-        loading ? "animate-pulse bg-gray-800" : "opacity-100"
+        loadingAll ? "animate-pulse bg-gray-800" : "opacity-100"
       }`}
     >
-      {loading ? (
+      {loadingAll ? (
         <div className="h-[400px] w-full bg-gray-700 rounded-2xl"></div>
       ) : (
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings1}>
           {peopleMatterSections.map((section, index) => (
             <div key={index} className="px-4">
               <div className="mb-8 flex flex-col items-center text-center p-6">
