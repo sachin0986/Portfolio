@@ -18,11 +18,13 @@ const Publications = () => {
   // Cycle through images
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setActiveImage((prev) => (prev === 0 ? 1 : 0));
+      if (!isHovering) {
+        setActiveImage((prev) => (prev === 0 ? 1 : 0));
+      }
     }, 5000);
     
     return () => clearInterval(intervalId);
-  }, []);
+  }, [isHovering]);
 
   // Placeholder image URLs - replace with your actual images
   const images = [
@@ -37,7 +39,7 @@ const Publications = () => {
         <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold bg-white bg-clip-text text-transparent animate-gradient m-3 sm:m-4 md:m-2">
           Decoding Customer Sentiment
           <br />
-          <span className="text-xs sm:text-xs md:text-xl lg:text-5xl font-semibold mt-2 block text-gray-400">
+          <span className="text-xs sm:text-xs md:text-xl lg:text-3xl font-semibold mt-2 block text-gray-400">
             My research unveils cutting-edge techniques for analyzing Amazon product reviews
           </span>
         </h1>
@@ -119,101 +121,80 @@ const Publications = () => {
           </div>
         </div>
 
-        {/* Right column: Research paper images with responsive height */}
+        {/* Right column: Research paper images - IMPROVED RESPONSIVENESS */}
         <div className="w-full lg:w-1/2 flex items-center justify-center mt-4 lg:mt-0">
           {/* Shimmer Effect (Visible while Loading) */}
           {isLoading && (
-            <div className="w-full max-w-md h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 animate-shimmer rounded-lg"></div>
+            <div className="w-full aspect-[3/4] max-w-md bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 animate-shimmer rounded-lg"></div>
           )}
 
-          {/* Animated Publication Images Container - Center aligned with responsive height */}
+          {/* Animated Publication Images Container - Aspect ratio for consistent sizing */}
           {!isLoading && (
-            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-3xl mx-auto bg-white">
-              {/* Image Navigation Dots */}
-              <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
+            <div 
+              className="relative w-full aspect-[3/4] max-w-md overflow-hidden rounded-2xl mx-auto bg-white/5 border border-white/10 shadow-xl"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              {/* Image Carousel */}
+              <div className="h-full w-full">
+                {/* First Image */}
+                <div
+                  className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
+                    activeImage === 0 ? 'translate-x-0' : '-translate-x-full'
+                  }`}
+                >
+                  <img
+                    src={images[0]}
+                    alt="Publication Preview 1"
+                    className="w-full h-full object-contain p-2"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Second Image */}
+                <div
+                  className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
+                    activeImage === 1 ? 'translate-x-0' : 'translate-x-full'
+                  }`}
+                >
+                  <img
+                    src={images[1]}
+                    alt="Publication Preview 2"
+                    className="w-full h-full object-contain p-2"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Overlay with Action Button */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end items-center p-6">
+                <a
+                  href={IEEE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  View Publication
+                </a>
+              </div>
+
+              {/* Navigation Dots - Repositioned for better visibility */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-3 px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full">
                 {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveImage(index)}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
-                      activeImage === index ? 'bg-blue-500' : 'bg-white/40'
+                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                      activeImage === index ? 'bg-blue-500' : 'bg-white/50 hover:bg-white/80'
                     }`}
                     aria-label={`View image ${index + 1}`}
                   />
                 ))}
               </div>
-
-              {/* First Image with responsive object-fit */}
-              <div
-                className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-                  activeImage === 0 ? 'translate-x-0' : '-translate-x-full'
-                }`}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              >
-                {/* Image with responsive sizing */}
-                <img
-                  src={images[0]}
-                  alt="Publication Preview 1"
-                  className="w-full h-full object-contain sm:object-cover rounded-3xl shadow-lg"
-                />
-                
-                {/* Overlay gradient for better visibility */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                  {/* Centered View Publication Button */}
-                  <a
-                    href={IEEE_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-500 hover:bg-blue-600 text-white text-sm sm:text-base font-medium rounded-full transition-all transform hover:scale-105 flex items-center gap-2"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    View Publication
-                  </a>
-                </div>
-              </div>
-
-              {/* Second Image with responsive object-fit */}
-              <div
-                className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-                  activeImage === 1 ? 'translate-x-0' : 'translate-x-full'
-                }`}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              >
-                {/* Image with responsive sizing */}
-                <img
-                  src={images[1]}
-                  alt="Publication Preview 2"
-                  className="w-full h-full object-contain sm:object-fill rounded-3xl shadow-lg"
-                />
-                
-                {/* Overlay gradient for better visibility */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                  {/* Centered View Publication Button */}
-                  <a
-                    target="_blank"
-                    href={IEEE_LINK}
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-500 hover:bg-blue-600 text-white text-sm sm:text-base font-medium rounded-full transition-all transform hover:scale-105 flex items-center gap-2"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    View Presentation
-                  </a>
-                </div>
-              </div>
-
-              {/* Animation Overlay - modified to not interfere with button visibility */}
-              <div 
-                className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transition-opacity duration-300 animate-shimmer rounded-lg pointer-events-none ${
-                  isHovering ? 'opacity-100' : 'opacity-0'
-                }`}
-              ></div>
             </div>
           )}
         </div>
