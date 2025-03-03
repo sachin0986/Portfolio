@@ -46,11 +46,11 @@ const GameComponent = () => {
     </div>
   
     {/* Right Section - Show only on large screens (above 1024px) */}
-    <div className="hidden md:hidden lg:flex w-1/2 items-center justify-center">
+    <div className="hidden md:hidden lg:flex w-1/2 items-center justify-end">
       <img
         src={CLOUDINARY + `/v1739822077/GOD_1_hzrdqg.png`}
         alt="God of War Character"
-        className="object-contain w-[500px] h-[500px] lg:w-[600px] lg:h-[600px]"
+        className="object-fill w-[500px] h-[500px] lg:w-[600px] lg:h-[600px]"
       />
     </div>
   </div>

@@ -292,36 +292,53 @@ export const AllPicturesCarousel = () => {
   };
 
   return (
+    <div className="px-4 md:px-8 lg:px-10 pb-8">
     <div
       className={`bg-black p-4 rounded-3xl transition-opacity duration-700 ${
         loadingAll ? "animate-pulse bg-gray-800" : "opacity-100"
       }`}
     >
       {loadingAll ? (
-        <div className="h-[400px] w-full bg-gray-700 rounded-2xl"></div>
+        <div className="h-[250px] md:h-[350px] lg:h-[400px] w-full bg-gray-700 rounded-2xl"></div>
       ) : (
         <Slider {...sliderSettings1}>
           {peopleMatterSections.map((section, index) => (
-            <div key={index} className="px-4">
-              <div className="mb-8 flex flex-col items-center text-center p-6">
-                <h2 className="text-4xl font-bold text-blue-400 mb-4">{section.title}</h2>
-                <p className="text-white text-lg max-w-2xl">{section.description}</p>
+            <div key={index} className="px-2 md:px-4">
+              <div className="mb-4 md:mb-8 flex flex-col items-center text-center p-3 md:p-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-2 md:mb-4">
+                  {section.title}
+                </h2>
+                <p className="text-white text-sm md:text-base lg:text-lg max-w-2xl">
+                  {isMobile || isTablet ? truncateText(section.description, 150) : section.description}
+                </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
+              {/* Mobile & Tablet View - Only Main Image */}
+              <div className="block lg:hidden">
+                <div className="h-[200px] md:h-[300px]">
+                  <img
+                    src={section.images[0].src}
+                    alt={section.images[0].alt}
+                    className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl"
+                  />
+                </div>
+              </div>
+  
+              {/* Desktop View - Grid Layout */}
+              <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
                 {/* Large feature image */}
-                <div className="lg:col-span-2 h-[400px]">
+                <div className="lg:col-span-2 lg:h-[400px]">
                   <img
                     src={section.images[0].src}
                     alt={section.images[0].alt}
                     className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
                 </div>
-
+  
                 {/* Grid of smaller images */}
                 <div className="grid grid-cols-2 gap-4">
-                  {section.images.slice(1).map((image, imgIndex) => (
-                    <div key={imgIndex} className="h-[190px]">
+                  {section.images.slice(1, 5).map((image, imgIndex) => (
+                    <div key={imgIndex} className="lg:h-[190px]">
                       <img
                         src={image.src}
                         alt={image.alt}
@@ -336,6 +353,7 @@ export const AllPicturesCarousel = () => {
         </Slider>
       )}
     </div>
+  </div>
   );
 };
 

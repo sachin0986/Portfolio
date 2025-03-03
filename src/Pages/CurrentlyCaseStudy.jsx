@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -41,8 +41,72 @@ const userSchema = new mongoose.Schema({
 });`;
 
 const CurrentlyCaseStudy = () => {
+  // Add scroll animation effect
+  useEffect(() => {
+    // Function to check if an element is in viewport
+    const isInViewport = (element) => {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    };
+
+    // Function to handle scroll and animate elements
+    const handleScroll = () => {
+      const animatedSections = document.querySelectorAll('.animate-on-scroll');
+      
+      animatedSections.forEach((section, index) => {
+        if (isInViewport(section)) {
+          // Alternate between left and right animations
+          if (index % 2 === 0) {
+            section.classList.add('slide-in-left');
+            section.classList.remove('invisible');
+          } else {
+            section.classList.add('slide-in-right');
+            section.classList.remove('invisible');
+          }
+        }
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Trigger once on load for elements already in viewport
+    setTimeout(handleScroll, 100);
+    
+    // Clean up
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="mx-auto px-4 py-12 font-sans max-w-7xl">
+      {/* Add CSS for animations */}
+      <style jsx>{`
+        @keyframes slideInLeft {
+          from { transform: translateX(-100px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+          from { transform: translateX(100px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-left {
+          animation: slideInLeft 0.8s ease forwards;
+        }
+        
+        .slide-in-right {
+          animation: slideInRight 0.8s ease forwards;
+        }
+        
+        .invisible {
+          opacity: 0;
+        }
+      `}</style>
+
       <h1 className="text-5xl font-bold text-center mb-16 text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Reps & Recipes: A Full-Stack Journey
       </h1>
@@ -56,7 +120,7 @@ const CurrentlyCaseStudy = () => {
       </div>
 
       {/* Project Overview */}
-      <section className="mb-24">
+      <section className="mb-24 animate-on-scroll invisible">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Project Overview
         </h2>
@@ -78,7 +142,7 @@ const CurrentlyCaseStudy = () => {
       </section>
 
       {/* Authentication Challenge */}
-      <section className="mb-24">
+      <section className="mb-24 animate-on-scroll invisible">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Authentication Implementation
         </h2>
@@ -127,7 +191,7 @@ const CurrentlyCaseStudy = () => {
       </section>
 
       {/* Server Architecture */}
-      <section className="mb-24">
+      <section className="mb-24 animate-on-scroll invisible">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Server Architecture
         </h2>
@@ -164,7 +228,7 @@ const CurrentlyCaseStudy = () => {
       </section>
 
       {/* Database Design */}
-      <section className="mb-24">
+      <section className="mb-24 animate-on-scroll invisible">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           MongoDB Database Design
         </h2>

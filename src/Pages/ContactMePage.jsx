@@ -63,7 +63,7 @@ const ContactMePage = () => {
             <div className="space-y-3 sm:space-y-4">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Let's Talk About it:</h2>
               <div className="space-y-3 sm:space-y-4">
-                <a href="tel:+918655898414" className="flex items-center gap-2 sm:gap-3 bg-[#1E1E1E] p-3 sm:p-4 rounded-xl">
+                <a href="tel:+918279480784" className="flex items-center gap-2 sm:gap-3 bg-[#1E1E1E] p-3 sm:p-4 rounded-xl">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#BFFF00] rounded-full flex items-center justify-center">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
