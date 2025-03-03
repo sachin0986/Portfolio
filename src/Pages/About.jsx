@@ -8,7 +8,6 @@ import { GiGraduateCap } from "react-icons/gi";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { VIDEO } from "../Utils/Constants";
 import { peopleMatterSections } from "../Utils/Database";
-import { motion } from "framer-motion";
 import Slider from "react-slick";
 import WorkoutComponent from "../Components/WorkoutComponent";
 
@@ -335,7 +334,7 @@ const About = () => {
                 {section.title}
               </h2>
               <p className="text-white text-sm md:text-base lg:text-lg max-w-2xl">
-                {isMobile || isTablet ? truncateText(section.description, 150) : section.description}
+                {isMobile || isTablet ? truncateText(section.description, 10) : section.description}
               </p>
             </div>
 

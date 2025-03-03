@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -28,72 +28,8 @@ git push origin feature-branch
 # Create a Pull Request on GitHub`;
 
 const CaseStudyGSSoC = () => {
-  // Add scroll animation effect
-  useEffect(() => {
-    // Function to check if an element is in viewport
-    const isInViewport = (element) => {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-        rect.bottom >= 0
-      );
-    };
-
-    // Function to handle scroll and animate elements
-    const handleScroll = () => {
-      const animatedSections = document.querySelectorAll('.animate-on-scroll');
-      
-      animatedSections.forEach((section, index) => {
-        if (isInViewport(section)) {
-          // Alternate between left and right animations
-          if (index % 2 === 0) {
-            section.classList.add('slide-in-left');
-            section.classList.remove('invisible');
-          } else {
-            section.classList.add('slide-in-right');
-            section.classList.remove('invisible');
-          }
-        }
-      });
-    };
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    
-    // Trigger once on load for elements already in viewport
-    setTimeout(handleScroll, 100);
-    
-    // Clean up
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="mx-auto px-4 py-12 font-sans max-w-7xl">
-      {/* Add CSS for animations */}
-      <style jsx>{`
-        @keyframes slideInLeft {
-          from { transform: translateX(-100px); opacity: 0; }
-          to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideInRight {
-          from { transform: translateX(100px); opacity: 0; }
-          to { transform: translateX(0); opacity: 1; }
-        }
-        
-        .slide-in-left {
-          animation: slideInLeft 0.8s ease forwards;
-        }
-        
-        .slide-in-right {
-          animation: slideInRight 0.8s ease forwards;
-        }
-        
-        .invisible {
-          opacity: 0;
-        }
-      `}</style>
-
       <h1 className="text-6xl font-bold text-center mb-16 text-gray-900 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
         My GSSOC Contributions: MERN Stack Project
       </h1>
@@ -108,7 +44,7 @@ const CaseStudyGSSoC = () => {
       </div>
 
       {/* Project Overview */}
-      <section className="mb-24 animate-on-scroll invisible">
+      <section className="mb-24">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Project Overview
         </h2>
@@ -128,7 +64,7 @@ const CaseStudyGSSoC = () => {
       </section>
 
       {/* My Contributions */}
-      <section className="mb-24 animate-on-scroll invisible">
+      <section className="mb-24">
         <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           My Contributions
         </h2>
@@ -186,7 +122,7 @@ const PopShopComponent = ({ props }) => {
         </h2>
         <div className="space-y-8">
           {/* Step 1: Fork the Repository */}
-          <div className="flex flex-col md:flex-row gap-10 items-center animate-on-scroll invisible">
+          <div className="flex flex-col md:flex-row gap-10 items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800 flex items-center gap-2">
                 <FaGitAlt className="text-3xl text-orange-600" /> Step 1: Fork the Repository
@@ -201,7 +137,7 @@ const PopShopComponent = ({ props }) => {
           </div>
 
           {/* Step 2: Clone the Repository */}
-          <div className="flex flex-col md:flex-row gap-10 items-center animate-on-scroll invisible">
+          <div className="flex flex-col md:flex-row gap-10 items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800 flex items-center gap-2">
                 <FaGithub className="text-3xl text-gray-800" /> Step 2: Clone the Repository
@@ -230,7 +166,7 @@ const PopShopComponent = ({ props }) => {
           </div>
 
           {/* Step 3: Create a Pull Request */}
-          <div className="flex flex-col md:flex-row gap-10 items-center animate-on-scroll invisible">
+          <div className="flex flex-col md:flex-row gap-10 items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800 flex items-center gap-2">
                 <FaCodeBranch className="text-3xl text-green-600" /> Step 3: Create a Pull Request

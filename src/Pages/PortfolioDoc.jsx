@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -29,64 +29,14 @@ const OptimizedImage = ({ id, alt, width }) => (
 );`;
 
 const PortfolioDoc = () => {
-  useEffect(() => {
-    // Initialize animations when component mounts
-    const animateOnScroll = () => {
-      const animatedElements = document.querySelectorAll('.animate-on-scroll');
-      
-      // Loop through all elements with the 'animate-on-scroll' class
-      animatedElements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        const isVisible = elementTop < window.innerHeight - 100 && elementBottom > 0;
-        
-        if (isVisible) {
-          element.classList.add('is-visible');
-        }
-      });
-    };
-    
-    // Run once on initial load
-    animateOnScroll();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', animateOnScroll);
-    };
-  }, []);
-
   return (
     <div className="px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 font-sans max-w-7xl mx-auto">
-      {/* Add CSS for animations */}
-      <style jsx>{`
-        .animate-on-scroll {
-          opacity: 0;
-          transition: all 0.8s ease-out;
-        }
-        
-        .animate-left {
-          transform: translateX(-50px);
-        }
-        
-        .animate-right {
-          transform: translateX(50px);
-        }
-        
-        .is-visible {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      `}</style>
-      
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10 md:mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-on-scroll">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10 md:mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Portfolio Development Documentation
       </h1>
 
       {/* Section 1: Design Evolution */}
-      <section className="mb-12 sm:mb-16 md:mb-24 animate-on-scroll animate-left">
+      <section className="mb-12 sm:mb-16 md:mb-24">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Redesigning with Purpose: A Design Evolution Story
         </h2>
@@ -139,7 +89,7 @@ const PortfolioDoc = () => {
       </section>
 
       {/* Section 2: GitHub API Integration */}
-      <section className="mb-12 sm:mb-16 md:mb-24 animate-on-scroll animate-right">
+      <section className="mb-12 sm:mb-16 md:mb-24">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Supercharged GitHub API: A Modern Approach
         </h2>
@@ -192,7 +142,7 @@ const PortfolioDoc = () => {
       </section>
 
       {/* Section 3: Cloudinary Integration */}
-      <section className="mb-12 sm:mb-16 md:mb-24 animate-on-scroll animate-left">
+      <section className="mb-12 sm:mb-16 md:mb-24">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Cloudinary Chronicles: Building Lightning-Fast Image Loads
         </h2>
@@ -272,7 +222,7 @@ const PortfolioDoc = () => {
       </section>
 
       {/* Section 4: Vercel Deployment */}
-      <section className="animate-on-scroll animate-right">
+      <section>
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 pb-2 border-b-2 border-gray-200 text-gray-800">
           Why I Switched to Vercel (And Never Looked Back)
         </h2>
@@ -338,28 +288,28 @@ const PortfolioDoc = () => {
         <div className="bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg shadow-sm">
           <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 md:mb-8 text-gray-800">Current Deployment Setup</h3>
           <div className="space-y-4 sm:space-y-6">
-            <div className="bg-blue-50 p-4 sm:p-6 rounded-lg border-l-4 border-blue-400 animate-on-scroll animate-left">
+            <div className="bg-blue-50 p-4 sm:p-6 rounded-lg border-l-4 border-blue-400">
               <h4 className="font-semibold text-blue-800 mb-2 sm:mb-3 text-lg sm:text-xl">Continuous Deployment</h4>
               <p className="text-blue-700 text-base sm:text-lg leading-relaxed">
                 Every push to the main branch triggers an automatic build and deployment, ensuring the site always reflects the latest updates.
               </p>
             </div>
             
-            <div className="bg-green-50 p-4 sm:p-6 rounded-lg border-l-4 border-green-400 animate-on-scroll animate-right">
+            <div className="bg-green-50 p-4 sm:p-6 rounded-lg border-l-4 border-green-400">
               <h4 className="font-semibold text-green-800 mb-2 sm:mb-3 text-lg sm:text-xl">Preview Deployments</h4>
               <p className="text-green-700 text-base sm:text-lg leading-relaxed">
                 Each pull request generates a unique preview URL, allowing me to test changes before merging to production.
               </p>
             </div>
             
-            <div className="bg-purple-50 p-4 sm:p-6 rounded-lg border-l-4 border-purple-400 animate-on-scroll animate-left">
+            <div className="bg-purple-50 p-4 sm:p-6 rounded-lg border-l-4 border-purple-400">
               <h4 className="font-semibold text-purple-800 mb-2 sm:mb-3 text-lg sm:text-xl">Performance Monitoring</h4>
               <p className="text-purple-700 text-base sm:text-lg leading-relaxed">
                 Vercel Analytics provides insights into Core Web Vitals and user experience metrics, helping me identify optimization opportunities.
               </p>
             </div>
             
-            <div className="bg-amber-50 p-4 sm:p-6 rounded-lg border-l-4 border-amber-400 animate-on-scroll animate-right">
+            <div className="bg-amber-50 p-4 sm:p-6 rounded-lg border-l-4 border-amber-400">
               <h4 className="font-semibold text-amber-800 mb-2 sm:mb-3 text-lg sm:text-xl">Custom Domain & HTTPS</h4>
               <p className="text-amber-700 text-base sm:text-lg leading-relaxed">
                 Configured a custom domain with automatic SSL certificate renewal for a professional and secure portfolio presence.
@@ -369,7 +319,7 @@ const PortfolioDoc = () => {
         </div>
         
         {/* Migration Results */}
-        <div className="mt-6 sm:mt-8 md:mt-10 p-4 sm:p-6 md:p-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-gray-200 shadow-sm animate-on-scroll">
+        <div className="mt-6 sm:mt-8 md:mt-10 p-4 sm:p-6 md:p-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-gray-200 shadow-sm">
           <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 md:mb-8 text-gray-800 text-center">Migration Results</h3>
           
           {/* Responsive grid - 1 column on mobile, 3 columns on md+ */}
