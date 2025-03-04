@@ -23,7 +23,7 @@ const Header = () => {
         {/* Logo / Name and Mobile Menu Toggle */}
         <div className={headerStyle.logoDiv}>
           <h1 className={headerStyle.nameStyle}>
-            <Link to="/">Sachin Arora</Link>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)} >Sachin Arora</Link>
           </h1>
 
           {/* Mobile Menu Toggle Button */}

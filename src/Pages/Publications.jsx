@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CLOUDINARY } from "../Utils/Database";
 import { IEEE_LINK, CERTIFICATE_LINK, COLLEGE_VIEW } from "../Utils/Constants";
 
+
 const Publications = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
@@ -172,6 +173,7 @@ const Publications = () => {
                   href={IEEE_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   className="mb-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Assignment, personalProjects, realWorld } from "../Utils/Database";
-import { FaGithub, FaCode, FaLaptopCode, FaBriefcase, FaInfoCircle } from "react-icons/fa";
+import {
+  FaGithub,
+  FaCode,
+  FaLaptopCode,
+  FaBriefcase,
+} from "react-icons/fa";
 import { GrDeploy } from "react-icons/gr";
 
 const style = {
@@ -12,7 +17,10 @@ const style = {
 
 const shimmerEffect = {
   initial: { opacity: 0.3 },
-  animate: { opacity: [0.3, 0.6, 0.9, 1], transition: { duration: 1, repeat: Infinity } },
+  animate: {
+    opacity: [0.3, 0.6, 0.9, 1],
+    transition: { duration: 1, repeat: Infinity },
+  },
 };
 
 const FilterSection = () => {
@@ -36,9 +44,9 @@ const FilterSection = () => {
 
   // Category icons mapping
   const categoryIcons = {
-    "Assignments": <FaCode className="text-lg" />,
+    Assignments: <FaCode className="text-lg" />,
     "Personal Projects": <FaLaptopCode className="text-lg" />,
-    "Real World": <FaBriefcase className="text-lg" />
+    "Real World": <FaBriefcase className="text-lg" />,
   };
 
   return (
@@ -56,7 +64,7 @@ const FilterSection = () => {
           >
             {/* Show icon on all screens */}
             <span className="mr-0 sm:mr-2">{categoryIcons[category]}</span>
-            
+
             {/* Hide text on small screens, show on sm and up */}
             <span className="hidden sm:inline">{category}</span>
           </button>
@@ -90,33 +98,42 @@ const FilterSection = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className="text-gray-300 text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">{item.title}</h3>
-                  <img src={item.image} alt="image_preview" className="w-full h-32 sm:h-40 object-cover rounded-lg" />
+                  <h3 className="text-gray-300 text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">
+                    {item.title}
+                  </h3>
+                  <img
+                    src={item.image}
+                    alt="image_preview"
+                    className="w-full h-32 sm:h-40 object-cover rounded-lg"
+                  />
                   <p className="text-gray-300 text-sm sm:text-base text-center m-2 sm:m-4">
                     {/* Truncate description on mobile */}
-                    {window.innerWidth < 640 
-                      ? item.discription.length > 80 
-                        ? `${item.discription.substring(0, 80)}...` 
+                    {window.innerWidth < 640
+                      ? item.discription.length > 80
+                        ? `${item.discription.substring(0, 80)}...`
                         : item.discription
-                      : item.discription
-                    }
+                      : item.discription}
                   </p>
 
                   {/* Buttons Row */}
-                  <div className="flex justify-between items-center w-full mt-3 sm:mt-4 space-x-2 sm:space-x-4">
-                    {/* More Info - Icon on mobile, Button with text on larger screens */}
-                    <button className={`${style.buttons} flex-1 flex items-center justify-center`}>
-                      <FaInfoCircle className="sm:hidden" />
-                      <span className="hidden sm:inline text-black">More Info</span>
-                    </button>
-
+                  <div className="flex justify-evenly items-center w-full mt-3 sm:mt-4 space-x-2 sm:space-x-4 border border-gray-500 rounded-4xl p-2 sm:p-3 shadow-md">
                     {/* GitHub Link */}
-                    <a href={item.gitLinl} target="_blank" rel="noopener noreferrer" className={style.iconButton}>
+                    <a
+                      href={item.gitLinl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={style.iconButton}
+                    >
                       <FaGithub className="text-xl sm:text-2xl text-white" />
                     </a>
 
                     {/* Live Link */}
-                    <a href={item.deployedlink} target="_blank" rel="noopener noreferrer" className={style.iconButton}>
+                    <a
+                      href={item.deployedlink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={style.iconButton}
+                    >
                       <GrDeploy className="text-xl sm:text-2xl text-red-500" />
                     </a>
                   </div>

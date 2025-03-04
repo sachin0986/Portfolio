@@ -22,7 +22,7 @@ const HowDesignPort = () => {
                     <span className="hidden lg:block">{fullDescription}</span>
                 </p>
                 <div className="flex justify-center md:justify-start mt-6">
-                    <Link to="/portfolioDoc">  
+                    <Link to="/portfolioDoc" onClick={() => window.scrollTo(0, 0)}>  
                         <button className={`${ButtonsStyle.glocyButtons}`}>
                             <span className="text-[#BFFF00] group-hover:text-gray-900 transition-colors duration-300">
                                 Read Case Study

@@ -1,5 +1,3 @@
-import { transform } from "framer-motion";
-import { div } from "framer-motion/client";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -21,7 +19,7 @@ export const EmailMe = () => {
 export const ContactMe = () => {
     return(
         <div>
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
             <button className={ButtonsStyle.glocyButtons}>
                 <span className="text-[#BFFF00]">Contact me</span>
             </button>
