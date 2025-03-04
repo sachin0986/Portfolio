@@ -89,7 +89,9 @@ const Resume = () => {
 
             {/* View Resume Button (Appears on Hover) */}
             <a
-              href="public/Sachin_Arora_Resume.pdf" // Replace with the correct path to your resume PDF
+              href="https://drive.google.com/file/d/1w3Z9AX0QVeiWTf5TFurNx6FJLfjxCf0b/view?usp=sharing" // Replace with the correct path to your resume PDF
+              target="_blank"
+              onClick={() => window.scrollTo(0, 0)}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-500 bg-gray-200 backdrop-blur-lg px-6 py-3 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2"
             >
               View Resume
