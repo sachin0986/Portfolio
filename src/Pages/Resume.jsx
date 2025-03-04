@@ -18,19 +18,19 @@ const Resume = () => {
     if (!isLoading) {
       const startTime = Date.now();
       const duration = 2000; // 2 seconds animation
-      
+
       const animateScore = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const currentScore = Math.floor(progress * targetScore);
-        
+
         setAtsScore(currentScore);
-        
+
         if (progress < 1) {
           requestAnimationFrame(animateScore);
         }
       };
-      
+
       requestAnimationFrame(animateScore);
     }
   }, [isLoading]);
@@ -103,7 +103,12 @@ const Resume = () => {
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mt-16 mb-8 border-t border-gray-800 pt-12">
         {/* ATS Score Gauge */}
         <div className="relative flex items-center justify-center">
-          <svg width="200" height="200" viewBox="0 0 200 200" className="transform -rotate-90">
+          <svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            className="transform -rotate-90"
+          >
             {/* Background Circle */}
             <circle
               cx="100"
@@ -114,7 +119,7 @@ const Resume = () => {
               strokeWidth="10"
               className="opacity-30"
             />
-            
+
             {/* Progress Circle */}
             <circle
               cx="100"
@@ -128,52 +133,61 @@ const Resume = () => {
               strokeDashoffset={calculateStrokeDashoffset(atsScore)}
               className="transition-all duration-300 ease-out"
             />
-            
+
             {/* Linear Gradient Definition */}
             <defs>
-              <linearGradient id="score-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id="score-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor="#3B82F6" />
                 <stop offset="100%" stopColor="#10B981" />
               </linearGradient>
             </defs>
           </svg>
-          
+
           {/* Score Text */}
           <div className="absolute flex flex-col items-center">
             <span className="text-5xl font-bold text-white">{atsScore}</span>
             <span className="text-sm text-gray-300">ATS SCORE</span>
           </div>
         </div>
-        
+
         {/* ATS Score Description */}
         <div className="max-w-md text-center md:text-left">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">ATS-Optimized Template</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+            ATS-Optimized Template
+          </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            This resume template is designed to score high on Applicant Tracking Systems.
-            With a <span className="text-blue-400 font-semibold">95% ATS score</span>, your 
-            resume will make it past automated filters and into the hands of real recruiters.
-            Perfect for developers at all levels!
+            This resume template is designed to score high on Applicant Tracking
+            Systems. With a{" "}
+            <span className="text-blue-400 font-semibold">95% ATS score</span>,
+            your resume will make it past automated filters and into the hands
+            of real recruiters. Perfect for developers at all levels!
           </p>
-          
+
           {/* Features Bullets */}
-<div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-  <div className="flex items-center justify-center md:justify-start">
-    <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
-    <span className="text-gray-300">Clean Layout</span>
-  </div>
-  <div className="flex items-center justify-center md:justify-start">
-    <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-    <span className="text-gray-300">Proper Formatting</span>
-  </div>
-  <div className="flex items-center justify-center md:justify-start">
-    <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
-    <span className="text-gray-300">Keyword Optimized</span>
-  </div>
-  <div className="flex items-center justify-center md:justify-start">
-    <div className="w-2 h-2 rounded-full bg-yellow-500 mr-2"></div>
-    <span className="text-gray-300">Recruiter Approved</span>
-  </div>
-</div>
+          <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <div className="flex items-center justify-center md:justify-start">
+              <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+              <span className="text-gray-300">Clean Layout</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start">
+              <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+              <span className="text-gray-300">Proper Formatting</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start">
+              <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+              <span className="text-gray-300">Keyword Optimized</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start">
+              <div className="w-2 h-2 rounded-full bg-yellow-500 mr-2"></div>
+              <span className="text-gray-300">Recruiter Approved</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

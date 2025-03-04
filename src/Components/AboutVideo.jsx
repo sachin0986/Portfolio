@@ -69,5 +69,4 @@ const AboutVideo = () => {
   );
 };
 
-
 export default AboutVideo;

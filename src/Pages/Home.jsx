@@ -1,11 +1,16 @@
-import Body from "../Components/Body";
+import React from "react";
+import AboutComponent from "../Components/AboutComponent";
+import { FooterCarousel } from "../Components/Corousal";
+import AboutProject from "../Components/AboutProjects";
 
 const Home = () => {
-    return(
-        <>
-           <Body /> 
-        </>
-    )
-}
+  return (
+    <>
+      <AboutComponent />
+      <AboutProject />
+      <FooterCarousel />
+    </>
+  );
+};
 
 export default Home;

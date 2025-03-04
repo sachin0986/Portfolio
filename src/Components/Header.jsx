@@ -8,7 +8,7 @@ const headerStyle = {
   logoDiv: `w-full md:w-auto flex justify-between items-center`,
   nameStyle: `text-2xl font-bold hover:text-white transition duration-300`,
   mobilemenu: `md:hidden text-gray-400 hover:text-white focus:outline-none`,
-}
+};
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,21 +23,22 @@ const Header = () => {
         {/* Logo / Name and Mobile Menu Toggle */}
         <div className={headerStyle.logoDiv}>
           <h1 className={headerStyle.nameStyle}>
-            <Link to="/" onClick={() => window.scrollTo(0, 0)} >Sachin Arora</Link>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+              Sachin Arora
+            </Link>
           </h1>
 
           {/* Mobile Menu Toggle Button */}
-          <button
-            className={headerStyle.mobilemenu}
-            onClick={toggleMobileMenu}
-          >
+          <button className={headerStyle.mobilemenu} onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
         {/* Navigation */}
         <nav
-          className={`${isMobileMenuOpen ? "block" : "hidden"} md:block mt-4 md:mt-0 w-full md:w-auto`}
+          className={`${
+            isMobileMenuOpen ? "block" : "hidden"
+          } md:block mt-4 md:mt-0 w-full md:w-auto`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-2 lg:space-x-6 space-y-4 md:space-y-0">
             {[

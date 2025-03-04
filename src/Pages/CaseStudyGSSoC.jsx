@@ -1,9 +1,9 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Icons
-import { FaGitAlt, FaGithub, FaCodeBranch } from 'react-icons/fa';
+import { FaGitAlt, FaGithub, FaCodeBranch } from "react-icons/fa";
 
 // Git Commands
 const gitForkCommand = `# Fork a repository
@@ -36,9 +36,9 @@ const CaseStudyGSSoC = () => {
 
       {/* GSSOC Logo */}
       <div className="flex justify-center mb-10 sm:mb-16">
-        <img 
-          src="https://repository-images.githubusercontent.com/331823142/9764a900-5c8e-11eb-9f94-da2a01385e83" 
-          alt="GirlScript Summer of Code Logo" 
+        <img
+          src="https://repository-images.githubusercontent.com/331823142/9764a900-5c8e-11eb-9f94-da2a01385e83"
+          alt="GirlScript Summer of Code Logo"
           className="w-32 sm:w-40 md:w-48 h-auto"
         />
       </div>
@@ -50,15 +50,20 @@ const CaseStudyGSSoC = () => {
         </h2>
         <div className="flex flex-col items-center text-center">
           <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-10 max-w-3xl leading-relaxed px-2 sm:px-4">
-            During GirlScript Summer of Code (GSSOC), I contributed to a MERN stack project focused on building a robust and scalable web application. My contributions included implementing new features, fixing bugs, and improving the overall codebase.
+            During GirlScript Summer of Code (GSSOC), I contributed to a MERN
+            stack project focused on building a robust and scalable web
+            application. My contributions included implementing new features,
+            fixing bugs, and improving the overall codebase.
           </p>
           <div className="w-full max-w-4xl">
-            <img 
+            <img
               src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1740000880/popShop_uo4r9c.png"
-              alt="MERN Stack Overview" 
+              alt="MERN Stack Overview"
               className="w-full h-auto rounded-lg shadow-lg mb-4"
             />
-            <p className="text-gray-600 italic text-sm sm:text-base">Pop Shop Overview</p>
+            <p className="text-gray-600 italic text-sm sm:text-base">
+              Pop Shop Overview
+            </p>
           </div>
         </div>
       </section>
@@ -70,7 +75,9 @@ const CaseStudyGSSoC = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center">
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">What I Did</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">
+              What I Did
+            </h3>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
               <li>Implemented user authentication using JWT and bcrypt.</li>
               <li>Developed RESTful APIs for CRUD operations.</li>
@@ -80,20 +87,24 @@ const CaseStudyGSSoC = () => {
             </ul>
           </div>
           <div className="my-4 md:my-0 hidden sm:block">
-            <img 
-              src="https://pngmaterial.com/dvsxyz02/uploads/mouse-arrow-png.png" 
-              alt="Contribution arrow" 
+            <img
+              src="https://pngmaterial.com/dvsxyz02/uploads/mouse-arrow-png.png"
+              alt="Contribution arrow"
               className="w-24 sm:w-36 rotate-90 md:rotate-0"
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-8 md:mt-0">
-            <img 
+            <img
               src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739995556/Screenshot_2025-02-20_at_1.34.18_AM_unvpep.png"
-              alt="Contribution Screenshot" 
+              alt="Contribution Screenshot"
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <div className="mt-6 sm:mt-8 w-full">
-              <SyntaxHighlighter language="javascript" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {`import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -125,12 +136,18 @@ const PopShopComponent = ({ props }) => {
           <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-start md:items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 flex items-center gap-2">
-                <FaGitAlt className="text-2xl sm:text-3xl text-orange-600" /> Step 1: Fork the Repository
+                <FaGitAlt className="text-2xl sm:text-3xl text-orange-600" />{" "}
+                Step 1: Fork the Repository
               </h3>
               <p className="mb-4 sm:mb-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-                Fork the repository to your GitHub account to create a copy of the project.
+                Fork the repository to your GitHub account to create a copy of
+                the project.
               </p>
-              <SyntaxHighlighter language="bash" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="bash"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {gitForkCommand}
               </SyntaxHighlighter>
             </div>
@@ -140,26 +157,32 @@ const PopShopComponent = ({ props }) => {
           <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-start md:items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 flex items-center gap-2">
-                <FaGithub className="text-2xl sm:text-3xl text-gray-800" /> Step 2: Clone the Repository
+                <FaGithub className="text-2xl sm:text-3xl text-gray-800" /> Step
+                2: Clone the Repository
               </h3>
               <p className="mb-4 sm:mb-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-                Clone your forked repository to your local machine to start working on it.
+                Clone your forked repository to your local machine to start
+                working on it.
               </p>
-              <SyntaxHighlighter language="bash" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="bash"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {gitCloneCommand}
               </SyntaxHighlighter>
             </div>
             <div className="my-4 md:my-0 hidden sm:block">
-              <img 
-                src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png" 
-                alt="Clone arrow" 
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png"
+                alt="Clone arrow"
                 className="w-16 sm:w-26 rotate-90 md:rotate-0"
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-center mt-4 md:mt-0">
-              <img 
+              <img
                 src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1740001841/clone_repo_uxwyh2.png"
-                alt="GitHub Clone Screenshot" 
+                alt="GitHub Clone Screenshot"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -169,26 +192,32 @@ const PopShopComponent = ({ props }) => {
           <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-start md:items-center">
             <div className="w-full md:w-1/2">
               <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800 flex items-center gap-2">
-                <FaCodeBranch className="text-2xl sm:text-3xl text-green-600" /> Step 3: Create a Pull Request
+                <FaCodeBranch className="text-2xl sm:text-3xl text-green-600" />{" "}
+                Step 3: Create a Pull Request
               </h3>
               <p className="mb-4 sm:mb-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-                Push your changes to your fork and create a Pull Request (PR) to contribute back to the original repository.
+                Push your changes to your fork and create a Pull Request (PR) to
+                contribute back to the original repository.
               </p>
-              <SyntaxHighlighter language="bash" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="bash"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {gitPullRequestCommand}
               </SyntaxHighlighter>
             </div>
             <div className="my-4 md:my-0 hidden sm:block">
-              <img 
-                src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png" 
-                alt="PR arrow" 
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png"
+                alt="PR arrow"
                 className="w-16 sm:w-26 rotate-90 md:rotate-0"
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col items-center mt-4 md:mt-0">
-              <img 
+              <img
                 src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1740002065/commits_aifgul.png"
-                alt="GitHub PR Screenshot" 
+                alt="GitHub PR Screenshot"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { CLOUDINARY } from "../Utils/Database";
 import { IEEE_LINK, CERTIFICATE_LINK, COLLEGE_VIEW } from "../Utils/Constants";
 
-
 const Publications = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
@@ -23,14 +22,14 @@ const Publications = () => {
         setActiveImage((prev) => (prev === 0 ? 1 : 0));
       }
     }, 5000);
-    
+
     return () => clearInterval(intervalId);
   }, [isHovering]);
 
   // Placeholder image URLs - replace with your actual images
   const images = [
     CLOUDINARY + `v1739946540/R1_zxnl0a.png`,
-    CLOUDINARY + `v1739946538/R2_kgx2d6.png`
+    CLOUDINARY + `v1739946538/R2_kgx2d6.png`,
   ];
 
   return (
@@ -41,7 +40,8 @@ const Publications = () => {
           Decoding Customer Sentiment
           <br />
           <span className="text-xs sm:text-xs md:text-xl lg:text-3xl font-semibold mt-2 block text-gray-400">
-            My research unveils cutting-edge techniques for analyzing Amazon product reviews
+            My research unveils cutting-edge techniques for analyzing Amazon
+            product reviews
           </span>
         </h1>
       </div>
@@ -64,9 +64,15 @@ const Publications = () => {
           <div className="backdrop-blur-md bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-3 sm:gap-0">
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-blue-400">Research Assistant</h2>
-                <h3 className="text-lg sm:text-xl text-gray-300">Vellore Institute of Technology</h3>
-                <p className="text-gray-400 text-xs sm:text-sm">May 2024 – Jun 2024 | Bhopal, MP</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-blue-400">
+                  Research Assistant
+                </h2>
+                <h3 className="text-lg sm:text-xl text-gray-300">
+                  Vellore Institute of Technology
+                </h3>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                  May 2024 – Jun 2024 | Bhopal, MP
+                </p>
               </div>
               <a
                 target="_blank"
@@ -76,48 +82,86 @@ const Publications = () => {
                 Certificate
               </a>
             </div>
-            
+
             <ul className="space-y-2 sm:space-y-3 list-disc pl-5 text-gray-300 text-sm sm:text-base">
-              <li>Led research on stack ensembling for sentiment analysis of Amazon product reviews, resulting in publication in the IEEE Digital Library.</li>
-              <li>Designed experiments and preprocessed data from Kaggle using text cleaning, tokenization, and lemmatization.</li>
-              <li>Developed a novel stack ensemble model combining decision trees, random forests, and SVMs, enhancing accuracy.</li>
+              <li>
+                Led research on stack ensembling for sentiment analysis of
+                Amazon product reviews, resulting in publication in the IEEE
+                Digital Library.
+              </li>
+              <li>
+                Designed experiments and preprocessed data from Kaggle using
+                text cleaning, tokenization, and lemmatization.
+              </li>
+              <li>
+                Developed a novel stack ensemble model combining decision trees,
+                random forests, and SVMs, enhancing accuracy.
+              </li>
               <li>Presented findings at IEEE 2024 Conference.</li>
             </ul>
-            
+
             <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-4">
-              <a 
+              <a
                 target="_blank"
                 href={IEEE_LINK}
                 className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 flex items-center gap-1"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-3 w-3 sm:h-4 sm:w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
                 </svg>
                 View IEEE Publication
               </a>
-              <a 
+              <a
                 target="_blank"
                 href={COLLEGE_VIEW}
                 className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 flex items-center gap-1"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-3 w-3 sm:h-4 sm:w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
                 </svg>
                 College View
               </a>
             </div>
           </div>
-          
+
           <div className="text-gray-300 backdrop-blur-md bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
-            <h3 className="text-lg sm:text-xl font-semibold text-blue-400 mb-2 sm:mb-3">About This Project</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-blue-400 mb-2 sm:mb-3">
+              About This Project
+            </h3>
             <p className="mb-2 sm:mb-3 text-sm sm:text-base">
-              This research project focused on improving sentiment analysis accuracy for e-commerce product reviews. 
-              By implementing an ensemble approach that combined multiple machine learning algorithms, we achieved 
-              a 12% increase in classification accuracy compared to single-model approaches.
+              This research project focused on improving sentiment analysis
+              accuracy for e-commerce product reviews. By implementing an
+              ensemble approach that combined multiple machine learning
+              algorithms, we achieved a 12% increase in classification accuracy
+              compared to single-model approaches.
             </p>
             <p className="text-sm sm:text-base">
-              The work demonstrates how combining different algorithmic strengths can overcome individual 
-              model limitations, particularly when dealing with the nuanced language patterns found in customer reviews.
+              The work demonstrates how combining different algorithmic
+              strengths can overcome individual model limitations, particularly
+              when dealing with the nuanced language patterns found in customer
+              reviews.
             </p>
           </div>
         </div>
@@ -131,7 +175,7 @@ const Publications = () => {
 
           {/* Animated Publication Images Container - Aspect ratio for consistent sizing */}
           {!isLoading && (
-            <div 
+            <div
               className="relative w-full aspect-[3/4] max-w-md overflow-hidden rounded-2xl mx-auto bg-white/5 border border-white/10 shadow-xl"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
@@ -141,7 +185,7 @@ const Publications = () => {
                 {/* First Image */}
                 <div
                   className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
-                    activeImage === 0 ? 'translate-x-0' : '-translate-x-full'
+                    activeImage === 0 ? "translate-x-0" : "-translate-x-full"
                   }`}
                 >
                   <img
@@ -155,7 +199,7 @@ const Publications = () => {
                 {/* Second Image */}
                 <div
                   className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
-                    activeImage === 1 ? 'translate-x-0' : 'translate-x-full'
+                    activeImage === 1 ? "translate-x-0" : "translate-x-full"
                   }`}
                 >
                   <img
@@ -173,12 +217,30 @@ const Publications = () => {
                   href={IEEE_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                   className="mb-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
                   </svg>
                   View Publication
                 </a>
@@ -191,7 +253,9 @@ const Publications = () => {
                     key={index}
                     onClick={() => setActiveImage(index)}
                     className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                      activeImage === index ? 'bg-blue-500' : 'bg-white/50 hover:bg-white/80'
+                      activeImage === index
+                        ? "bg-blue-500"
+                        : "bg-white/50 hover:bg-white/80"
                     }`}
                     aria-label={`View image ${index + 1}`}
                   />

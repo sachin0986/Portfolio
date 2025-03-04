@@ -21,8 +21,8 @@ const Footer = () => {
             Ready to Transform Your Workflow?
           </h1>
           <h3 className="text-gray-300 text-lg md:text-xl mb-6">
-            I am available for freelance projects, remote work, or just discussing design.
-            Feel free to ping me at
+            I am available for freelance projects, remote work, or just
+            discussing design. Feel free to ping me at
           </h3>
           <div className="flex justify-center">
             <MailLogo />

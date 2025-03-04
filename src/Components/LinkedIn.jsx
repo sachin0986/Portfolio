@@ -1,24 +1,27 @@
-import React from "react"
+import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
 const LinkData = [
-    {
-      name: "LinkedIn",
-      handle: "sachina0986",
-      displayLink: "/sachin/linkedIn",
-      link: "https://www.linkedin.com/in/sachin0986/",
-      img: "https://res.cloudinary.com/dm2ek1ift/image/upload/v1739895504/me_zgbvni.jpg",
-      buttonText: "Connect"
-    }
+  {
+    name: "LinkedIn",
+    handle: "sachina0986",
+    displayLink: "/sachin/linkedIn",
+    link: "https://www.linkedin.com/in/sachin0986/",
+    img: "https://res.cloudinary.com/dm2ek1ift/image/upload/v1739895504/me_zgbvni.jpg",
+    buttonText: "Connect",
+  },
 ];
 
 const getIconAndColor = (platformName) => {
   switch (platformName.toLowerCase()) {
-    case 'linkedin':
-      return { icon: <FaLinkedin className="text-[#0A66C2]" />, bgColor: 'bg-[#0A66C2]' };
+    case "linkedin":
+      return {
+        icon: <FaLinkedin className="text-[#0A66C2]" />,
+        bgColor: "bg-[#0A66C2]",
+      };
     default:
-      return { icon: null, bgColor: 'bg-blue-600' };
+      return { icon: null, bgColor: "bg-blue-600" };
   }
 };
 
@@ -31,19 +34,21 @@ const LinkedInCard = ({ name, handle, displayLink, img, link, buttonText }) => {
         {/* Header */}
         <div className="flex items-center gap-2">
           <span className="text-xl sm:text-2xl md:text-3xl">{icon}</span>
-          <h5 className="text-base sm:text-lg md:text-xl font-bold text-black">{name}</h5>
+          <h5 className="text-base sm:text-lg md:text-xl font-bold text-black">
+            {name}
+          </h5>
         </div>
-        
+
         {/* Image */}
         <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden">
-          <img 
-            className="w-full h-full object-cover" 
-            src={img} 
-            alt="LinkedIn Profile" 
+          <img
+            className="w-full h-full object-cover"
+            src={img}
+            alt="LinkedIn Profile"
             loading="lazy"
           />
         </div>
-        
+
         {/* Content */}
         <div className="space-y-1 sm:space-y-2">
           {handle && (
@@ -52,7 +57,7 @@ const LinkedInCard = ({ name, handle, displayLink, img, link, buttonText }) => {
             </p>
           )}
           {displayLink && link && (
-            <a 
+            <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
@@ -67,18 +72,18 @@ const LinkedInCard = ({ name, handle, displayLink, img, link, buttonText }) => {
             </p>
           )}
         </div>
-        
+
         {/* Button */}
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="block w-full"
         >
-          <button 
+          <button
             className={`w-full inline-flex items-center justify-between px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-medium text-white ${bgColor} rounded-lg hover:opacity-90 focus:ring-4 focus:ring-blue-300 focus:outline-none transition-all duration-300 hover:scale-[1.02]`}
           >
-            {buttonText || 'Connect'}
+            {buttonText || "Connect"}
             <HiOutlineExternalLink className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
           </button>
         </a>
@@ -92,7 +97,7 @@ const LinkedIn = () => {
     <div className="flex justify-center items-center p-2 sm:p-4 md:p-6">
       <div className="max-w-screen-xl w-full">
         {LinkData.map((item, index) => (
-          <LinkedInCard 
+          <LinkedInCard
             key={index}
             name={item.name}
             img={item.img}

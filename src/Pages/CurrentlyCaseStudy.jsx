@@ -1,11 +1,10 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Icons
-import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiExpress, SiMongodb } from 'react-icons/si';
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiExpress, SiMongodb } from "react-icons/si";
 
 // Code Snippets
 const authCode = `// JWT Authentication Middleware
@@ -62,17 +61,20 @@ const CurrentlyCaseStudy = () => {
         </h2>
         <div className="flex flex-col items-center text-center">
           <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 md:mb-10 max-w-3xl leading-relaxed px-1 sm:px-4">
-            Reps & Recipes is a full-stack application that combines fitness tracking with meal planning.
-            Built with React.js, Node.js, MongoDB, and Express, it showcases modern web development practices
-            and robust architecture.
+            Reps & Recipes is a full-stack application that combines fitness
+            tracking with meal planning. Built with React.js, Node.js, MongoDB,
+            and Express, it showcases modern web development practices and
+            robust architecture.
           </p>
           <div className="w-full max-w-4xl">
-            <img 
+            <img
               src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/zflvozsibl8vs3p5vzsi.png"
-              alt="Reps & Recipes Dashboard" 
+              alt="Reps & Recipes Dashboard"
               className="w-full h-auto rounded-lg shadow-lg mb-2 sm:mb-4"
             />
-            <p className="text-gray-600 italic text-sm sm:text-base">Project Dashboard Overview</p>
+            <p className="text-gray-600 italic text-sm sm:text-base">
+              Project Dashboard Overview
+            </p>
           </div>
         </div>
       </section>
@@ -84,13 +86,17 @@ const CurrentlyCaseStudy = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center">
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">The Challenge</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">
+              The Challenge
+            </h3>
             <p className="mb-4 sm:mb-6 text-gray-700 text-base sm:text-lg leading-relaxed">
-              Implementing secure user authentication while maintaining a smooth user experience presented
-              several key challenges.
+              Implementing secure user authentication while maintaining a smooth
+              user experience presented several key challenges.
             </p>
             <div className="bg-gray-50 p-4 sm:p-6 rounded-lg shadow-sm">
-              <h4 className="font-semibold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-800">Solutions Implemented:</h4>
+              <h4 className="font-semibold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-800">
+                Solutions Implemented:
+              </h4>
               <ul className="list-disc pl-5 sm:pl-6 text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
                 <li>JWT-based authentication with secure token storage</li>
                 <li>Password hashing using bcrypt</li>
@@ -100,17 +106,17 @@ const CurrentlyCaseStudy = () => {
             </div>
           </div>
           <div className="my-4 md:my-0 hidden sm:block">
-            <img 
-              src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png" 
-              alt="Migration arrow" 
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png"
+              alt="Migration arrow"
               className="w-16 sm:w-26 rotate-90 md:rotate-0"
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
             <div className="relative w-full max-w-md">
-              <img 
+              <img
                 src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959258/extra/qjwg7tqx8myx6fdyqnl9.png"
-                alt="Authentication Flow" 
+                alt="Authentication Flow"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
               <div className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 bg-gray-100 px-2 sm:px-4 py-1 sm:py-2 rounded-md text-xs sm:text-sm text-gray-600 shadow">
@@ -118,7 +124,11 @@ const CurrentlyCaseStudy = () => {
               </div>
             </div>
             <div className="mt-6 sm:mt-8 w-full">
-              <SyntaxHighlighter language="javascript" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {authCode}
               </SyntaxHighlighter>
             </div>
@@ -133,7 +143,9 @@ const CurrentlyCaseStudy = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center">
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">Express Backend Structure</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">
+              Express Backend Structure
+            </h3>
             <ul className="list-disc pl-5 sm:pl-6 text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
               <li>MVC architecture for organized code structure</li>
               <li>Middleware for request validation and error handling</li>
@@ -142,20 +154,24 @@ const CurrentlyCaseStudy = () => {
             </ul>
           </div>
           <div className="my-4 md:my-0 hidden sm:block">
-            <img 
-              src="https://pngmaterial.com/dvsxyz02/uploads/mouse-arrow-png.png" 
-              alt="Migration arrow" 
+            <img
+              src="https://pngmaterial.com/dvsxyz02/uploads/mouse-arrow-png.png"
+              alt="Migration arrow"
               className="w-24 sm:w-36 rotate-90 md:rotate-0"
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
-            <img 
+            <img
               src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/alsxqcmwenrzhgzobjbe.png"
-              alt="Server Architecture Diagram" 
+              alt="Server Architecture Diagram"
               className="w-full h-auto rounded-lg shadow-md"
             />
             <div className="mt-6 sm:mt-8 w-full">
-              <SyntaxHighlighter language="javascript" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {expressCode}
               </SyntaxHighlighter>
             </div>
@@ -170,7 +186,9 @@ const CurrentlyCaseStudy = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center">
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">Data Models</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">
+              Data Models
+            </h3>
             <ul className="list-disc pl-5 sm:pl-6 text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
               <li>User schema with profile information</li>
               <li>Workout sessions with exercise details</li>
@@ -179,20 +197,24 @@ const CurrentlyCaseStudy = () => {
             </ul>
           </div>
           <div className="my-4 md:my-0 hidden sm:block">
-            <img 
-              src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png" 
-              alt="Migration arrow" 
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/055/143/086/small_2x/hand-drawn-sketch-of-a-black-arrow-curving-to-the-right-symbolizing-direction-and-movement-on-a-transparent-background-png.png"
+              alt="Migration arrow"
               className="w-16 sm:w-26 rotate-90 md:rotate-0"
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
-            <img 
+            <img
               src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/sy3vlen4aw2pbavodcfd.png"
-              alt="Database Schema" 
+              alt="Database Schema"
               className="w-full h-auto rounded-lg shadow-md"
             />
             <div className="mt-6 sm:mt-8 w-full">
-              <SyntaxHighlighter language="javascript" style={dracula} customStyle={{fontSize: '14px', lineHeight: '1.4'}}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={dracula}
+                customStyle={{ fontSize: "14px", lineHeight: "1.4" }}
+              >
                 {mongoDBCode}
               </SyntaxHighlighter>
             </div>

@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Assignment, personalProjects, realWorld } from "../Utils/Database";
-import {
-  FaGithub,
-  FaCode,
-  FaLaptopCode,
-  FaBriefcase,
-} from "react-icons/fa";
+import { FaGithub, FaCode, FaLaptopCode, FaBriefcase } from "react-icons/fa";
 import { GrDeploy } from "react-icons/gr";
 
 const style = {
