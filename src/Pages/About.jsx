@@ -274,7 +274,7 @@ const About = () => {
                   <img 
                     src={CLOUDINARY + image} 
                     alt={`VIT ${index}`} 
-                    className="rounded-2xl shadow-lg w-full h-[120px] sm:h-[160px] md:h-[220px] object-cover border border-gray-600" 
+                    className="rounded-2xl shadow-lg w-full h-[200px] sm:h-[160px] md:h-[220px] object-cover border border-gray-600" 
                   />
                 )}
               </div>
@@ -334,7 +334,7 @@ const About = () => {
                 {section.title}
               </h2>
               <p className="text-white text-sm md:text-base lg:text-lg max-w-2xl">
-                {isMobile || isTablet ? truncateText(section.description, 10) : section.description}
+                {isMobile || isTablet ? truncateText(section.description, 200) : section.description}
               </p>
             </div>
 
