@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
 const CurrentlyCaseStudy = () => {
   return (
     <div className="mx-auto px-4 sm:px-6 py-8 sm:py-12 font-sans max-w-7xl">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Reps & Recipes: A Full-Stack Journey
       </h1>
 
