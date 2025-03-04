@@ -15,7 +15,7 @@ const Currently = () => {
       {/* Image Section - Full width on mobile, half width on md screens and up */}
       <div className="w-full md:w-1/2 flex justify-center">
         <img
-          src={CLOUDINARY + `/v1739975135/currently_1_ntqssi.png`}
+          src={CLOUDINARY + `/v1741095420/RR_3_b1i042.png`}
           alt="currently image"
           className="w-full max-w-md rounded-lg shadow-lg"
         />

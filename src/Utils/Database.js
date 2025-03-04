@@ -38,7 +38,7 @@ export const personalProjects = [
     image:
       "https://res.cloudinary.com/dm2ek1ift/image/upload/v1739801225/Swigyy_Preview_dxopie.png",
     discription:
-      "🍔 Swiggy Clone is a React-based online food ordering platform, replicating Swiggy’s intuitive UI and seamless ordering experience.",
+      "🍔 Swiggy Clone is a React-based online food ordering platform, designed to replicate Swiggy’s intuitive UI, seamless ordering experience, and dynamic restaurant listing. 🚀",
     gitLinl: "",
     deployedlink: "https://swiggy-clone-umber.vercel.app/",
   },
@@ -46,7 +46,7 @@ export const personalProjects = [
     id: "2",
     title: "Reps & Recipies",
     image:
-      "https://res.cloudinary.com/dm2ek1ift/image/upload/v1739801225/Swigyy_Preview_dxopie.png",
+      "https://res.cloudinary.com/dm2ek1ift/image/upload/v1741095074/RR_2_qhuh9q.png",
     discription:
       "🥗 Reps & Recipes is a MERN-based food ordering web application, offering a wide range of healthy, high-protein meal options tailored to individual diet plans.",
     gitLinl: "https://github.com/sachin0986/Reps-Recipes",

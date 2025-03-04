@@ -90,7 +90,6 @@ const Resume = () => {
             {/* View Resume Button (Appears on Hover) */}
             <a
               href="src/assets/Sachin_Arora_Resume.pdf" // Replace with the correct path to your resume PDF
-              rel="noopener noreferrer"
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-500 bg-gray-200 backdrop-blur-lg px-6 py-3 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2"
             >
               View Resume

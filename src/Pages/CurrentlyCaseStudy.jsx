@@ -32,12 +32,13 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(\`Server running on port \${PORT}\`));`;
 
 const mongoDBCode = `// MongoDB Schema Example
-const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
-});`;
+const userSchema = new mongoose.Schema
+
+const DrinkModula = mongoose.model("HealthyDrinks", userSchema);
+const BreakFastModule = mongoose.model("MorningBreafasts", userSchema);
+const LightDinner = mongoose.model("LightDinner", userSchema);
+const MenuCard = mongoose.model("MenuCard", userSchema);
+`;
 
 const CurrentlyCaseStudy = () => {
   return (
@@ -68,7 +69,7 @@ const CurrentlyCaseStudy = () => {
           </p>
           <div className="w-full max-w-4xl">
             <img
-              src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/zflvozsibl8vs3p5vzsi.png"
+              src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1741095420/RR_3_b1i042.png"
               alt="Reps & Recipes Dashboard"
               className="w-full h-auto rounded-lg shadow-lg mb-2 sm:mb-4"
             />
@@ -161,11 +162,6 @@ const CurrentlyCaseStudy = () => {
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
-            <img
-              src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/alsxqcmwenrzhgzobjbe.png"
-              alt="Server Architecture Diagram"
-              className="w-full h-auto rounded-lg shadow-md"
-            />
             <div className="mt-6 sm:mt-8 w-full">
               <SyntaxHighlighter
                 language="javascript"
@@ -205,7 +201,7 @@ const CurrentlyCaseStudy = () => {
           </div>
           <div className="w-full md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
             <img
-              src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1739959259/extra/sy3vlen4aw2pbavodcfd.png"
+              src="https://res.cloudinary.com/dm2ek1ift/image/upload/v1741095724/Mongo_ia61sd.png"
               alt="Database Schema"
               className="w-full h-auto rounded-lg shadow-md"
             />
